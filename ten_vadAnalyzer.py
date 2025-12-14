@@ -109,7 +109,7 @@ class TenVADAnalyzer(VADAnalyzer):
     def __init__(
         self,
         *,
-        sample_rate: Optional[int] = None,
+        sample_rate: Optional[int] = 16000,
         params: Optional[VADParams] = None,
         hop_size: int = 256,
         threshold: float = 0.5,
