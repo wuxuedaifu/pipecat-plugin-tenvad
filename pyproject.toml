@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "livekit-plugins-tenvad"
+dynamic = ["version"]
+description = "TEN Voice Activity Detection (VAD) plugin for Pipecat / LiveKit, based on TEN VAD"
+readme = "README.md"
+
+# IMPORTANT: non-OSI, inherited license
+license = { text = "Custom License (See LICENSE file). Based on TEN VAD license." }
+
+requires-python = ">=3.10"
+
+keywords = [
+  "vad",
+  "voice-activity-detection",
+  "audio",
+  "realtime",
+  "webrtc",
+  "pipecat"
+]
+
+classifiers = [
+  "Intended Audience :: Developers",
+  "Topic :: Multimedia :: Sound/Audio",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only"
+]
+
+dependencies = [
+  "livekit-agents>=1.2.6",
+  "numpy>=1.26",
+  "ten-vad"
+]
+
+[project.optional-dependencies]
+test = [
+  "pipecat",
+  "ten-vad",
+  "loguru==0.7.3"
+]
+
+[project.urls]
+Source = "https://github.com/dangvansam/livekit-plugins-tenvad"
+Upstream = "https://github.com/TEN-framework/ten-vad"
+
+
+[tool.hatch.build.targets.sdist]
+include = ["/livekit", "LICENSE", "NOTICE"]
